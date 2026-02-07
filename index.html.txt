@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiara 💖 ¿Quieres ser mi San Valentín?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd1e8, #ffeaf4);
+      font-family: 'Arial', sans-serif;
+    }
+
+    .card {
+      background: #fff0f6;
+      padding: 45px;
+      border-radius: 30px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #7a1f4c;
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 130px;
+    }
+
+    button {
+      padding: 15px 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: absolute;
+    }
+
+    #yes {
+      background: #ff69b4;
+      color: white;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #yes:hover {
+      background: #ff85c2;
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    #no {
+      background: #ffc2d1;
+      color: #7a1f4c;
+      top: 65px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 22px;
+      color: #c2255c;
+      display: none;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>💘 Kiara 💘</h1>
+    <p>
+      Desde que llegaste, todo es más bonito…<br>
+      ¿Quieres ser mi San Valentín? 🌷
+    </p>
+
+    <div class="buttons">
+      <button id="yes">Sí 💖</button>
+      <button id="no">No 😢</button>
+    </div>
+
+    <div class="message" id="message">
+      💕 Sabía que dirías que sí, Kiara 💕<br>
+      Gracias por hacer mis días más felices 🌸<br>
+      Te amo 🥰
+    </div>
+  </div>
+
+  <script>
+    const noButton = document.getElementById('no');
+    const yesButton = document.getElementById('yes');
+    const message = document.getElementById('message');
+
+    noButton.addEventListener('mouseover', () => {
+      const x = Math.random() * 260 - 130;
+      const y = Math.random() * 90;
+
+      noButton.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesButton.addEventListener('click', () => {
+      message.style.display = 'block';
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
